@@ -4,14 +4,6 @@
   "height": 460,
   "background": "#fafaf7",
   "data": {"url": "../data/city_slope.csv"},
-  "transform": [
-    {
-      "joinaggregate": [{"op": "min", "field": "tmean", "as": "min_t"}, {"op": "max", "field": "tmean", "as": "max_t"}],
-      "groupby": ["city"]
-    },
-    {"calculate": "datum.tmean == datum.max_t && datum.tmean != datum.min_t ? '↑' : (datum.tmean == datum.min_t && datum.tmean != datum.max_t ? '↓' : '')", "as": "trend"},
-    {"calculate": "datum.period == '2020-2024'", "as": "is_right"}
-  ],
   "layer": [
     {
       "mark": {"type": "line", "size": 2.2, "opacity": 0.85},
@@ -21,23 +13,17 @@
           "type": "nominal",
           "sort": ["2005-2009", "2020-2024"],
           "title": null,
-          "axis": {"labelFontSize": 13, "labelFontWeight": "bold", "labelPadding": 8, "orient": "top"}
+          "axis": {"labelFontSize": 13, "labelFontWeight": "bold", "labelPadding": 8, "orient": "bottom"}
         },
         "y": {
           "field": "tmean",
           "type": "quantitative",
           "title": "Annual mean temperature (°C)",
           "scale": {"domain": [11, 29], "zero": false, "nice": false},
-          "axis": {"labelFontSize": 11, "titleFontSize": 12, "grid": false}
+          "axis": {"labelFontSize": 11, "titleFontSize": 12, "grid": false, "orient": "left"}
         },
         "detail": {"field": "city"},
-        "color": {
-          "field": "city",
-          "type": "nominal",
-          "sort": ["Darwin","Brisbane","Perth","Sydney","Adelaide","Canberra","Melbourne","Hobart"],
-          "scale": {"domain": ["Darwin","Brisbane","Perth","Sydney","Adelaide","Canberra","Melbourne","Hobart"], "range": ["#7f1d1d","#d7563d","#ee964b","#f4d35e","#a3c25e","#5da9c4","#3a7bc4","#1d4877"]},
-          "legend": null
-        }
+        "color": {"value": "#ADD8E6"}
       }
     },
     {
@@ -45,7 +31,7 @@
       "encoding": {
         "x": {"field": "period", "type": "nominal", "sort": ["2005-2009", "2020-2024"]},
         "y": {"field": "tmean", "type": "quantitative"},
-        "color": {"field": "city", "type": "nominal", "legend": null},
+        "color": {"value": "#ADD8E6"},
         "tooltip": [
           {"field": "city", "type": "nominal"},
           {"field": "period", "type": "nominal"},
@@ -60,7 +46,7 @@
         "x": {"field": "period", "type": "nominal", "sort": ["2005-2009", "2020-2024"]},
         "y": {"field": "tmean", "type": "quantitative"},
         "text": {"field": "city", "type": "nominal"},
-        "color": {"field": "city", "type": "nominal", "legend": null}
+        "color": {"value": "#ADD8E6"}
       }
     },
     {
@@ -70,7 +56,7 @@
         "x": {"field": "period", "type": "nominal", "sort": ["2005-2009", "2020-2024"]},
         "y": {"field": "tmean", "type": "quantitative"},
         "text": {"field": "tmean", "type": "quantitative", "format": ".2f"},
-        "color": {"field": "city", "type": "nominal", "legend": null}
+        "color": {"value": "#ADD8E6"}
       }
     }
   ],

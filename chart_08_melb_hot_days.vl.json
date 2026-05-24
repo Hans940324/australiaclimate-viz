@@ -62,8 +62,8 @@
         "values": [
           {"x": 2019, "y": 18.5, "text": "2019: 17 days ≥35 °C, 7 of them ≥40 °C — record", "color": "#222", "align": "center"},
           {"x": 2011, "y": 2.8, "text": "2011: only 1 day ≥35 °C (strong La Niña)", "color": "#1f6f3a", "align": "center"},
-          {"x": 2005.2, "y": 8.0, "text": "● ≥ 35 °C", "color": "#ee964b", "align": "left"},
-          {"x": 2005.2, "y": 6.6, "text": "● ≥ 40 °C", "color": "#7f1d1d", "align": "left"}
+          {"x": 2023.5, "y": 17.5, "text": "● ≥ 35 °C", "color": "#ee964b", "align": "left"},
+          {"x": 2023.5, "y": 16.2, "text": "● ≥ 40 °C", "color": "#7f1d1d", "align": "left"}
         ]
       },
       "mark": {"type": "text", "fontSize": 11, "fontStyle": "italic"},
